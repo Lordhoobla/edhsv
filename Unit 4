@@ -1,0 +1,71 @@
+//4.1.1
+
+import java.util.Scanner;public class U4_L1_Activity_One{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Enter positive numbers (-1 to stop)");int y=x.nextInt();int z=0;while(y!=-1){z+=y;y=x.nextInt();}System.out.print("Sum is "+z);}}
+
+//4.1.2
+
+import java.util.Scanner;public class U4_L1_Activity_Two{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Enter the Scores:");double y=x.nextDouble();int z=0;double xy=0;while(y!=-1){xy+=y;y=x.nextDouble();z++;}System.out.print("\nThe average is: "+(xy/z));}}
+
+//4.1.3
+
+import java.util.Scanner;public class U4_L1_Activity_Three{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Input a word:");String y=x.next();int i=0;while(i<y.length()){System.out.print(y.charAt(i));i+=2;}}}
+
+//4.1 1/2.1
+
+import java.util.Scanner;public class U4_L1_5_Activity_One{public static void main(String[] args){Scanner scan=new Scanner(System.in);int num=scan.nextInt();int fac=1;while(fac<=9){System.out.println(num*fac);fac++;}}}
+
+//4.1 1/2.2
+
+import java.util.Scanner;public class U4_L1_5_Activity_Two{public static void main(String[] args){Scanner scan=new Scanner(System.in);int num=scan.nextInt();int prod=1;while(num>0){prod*=num;num--;}System.out.println(prod);}}
+
+//4.2.1
+
+import java.util.Scanner;public class U4_L2_Activity_One{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Enter two numbers:");int y=x.nextInt();int z=x.nextInt();System.out.print("\n");if(y>z){while(y!=z){if(z%2==0){System.out.print(z+" ");}z++;}if(y%2==0){System.out.print(y);}}else if(z>y){while(y!=z){if(y%2==0){System.out.print(y+" ");}y++;}if(z%2==0){System.out.print(z);}}}}
+
+//4.2.2
+
+import java.util.Scanner;public class U4_L2_Activity_Two{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Enter a positive integer:");int n=x.nextInt();int a=0;while(n>0){a=n%10;System.out.println(a);n/=10;}}}
+
+//4.2.3
+
+import java.util.Scanner;public class U4_L2_Activity_Three{public static void main(String[] args){Scanner scan=new Scanner(System.in);double lo=0.0;double la=0.0;int choice=-1;double fn=-90.001;double fs=90.001;double fe=-180.001;double fw=180.001;do{System.out.println("Please enter the longitude:");lo=scan.nextDouble();System.out.println("Please enter the latitude:");la=scan.nextDouble();if(lo<-180||lo>180||la<-90||la>90){System.out.println("Incorrect Latitude or Longitude");}else{if(la>fn){fn=la;}if(la<fs){fs=la;}if(lo>fe){fe=lo;}if(lo<fw){fw=lo;}}System.out.println("Would you like to enter another location (1 for yes, 0 for no)?");choice=scan.nextInt();}while(choice==1);System.out.printf("Farthest North: %.3f\nFarthest South: %.3f\nFarthest East: %.3f\nFarthest West: %.3f",fn,fs,fe,fw);}}
+
+//4.3.1
+
+import java.util.Scanner;public class U4_L3_Activity_One{public static void main(String[] args){int x=0;for(int min=23;min<=89;min++){System.out.print(min+" ");x++;if(x==10){System.out.println("");x=0;}}}}
+
+//4.3.2
+
+import java.util.Scanner;public class U4_L3_Activity_Two{public static void main(String[] args){for(int i=2;i<=50;i+=2){System.out.println(i);}}}
+
+//4.3.3
+
+import java.util.Scanner;public class U4_L3_Activity_Three{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Enter a number between 0 and 100:");int y=x.nextInt();int z=0;if(y>=100||y<=0){System.out.print("error");}else{for(int i=y;i<=100;i++){System.out.print(i+" ");z++;if(z==20){System.out.println("");z=0;}}}}}
+
+//4.3.4
+
+import java.util.Scanner;public class U4_L3_Activity_Four{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Enter a positive integer:");int y=x.nextInt();if(y<=0){System.out.print("error");}else{for(int i=y;i>=0;i--){if(i%5==0||i==0){System.out.print(i+" ");}}}}}
+
+//4.4.1
+
+import java.util.Scanner;public class U4_L4_Activity_One{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Input String:");String y=x.nextLine();int count=0;for(int i=0;i<y.length()-1;i++){if(y.substring(i,i+2).toLowerCase().equals("sh")){count++;}}System.out.printf("Contains \"sh\" %d times.",count);}}
+
+//4.4.2
+
+import java.util.Scanner;public class U4_L4_Activity_Two{public static void main(String[] args){Scanner x=new Scanner(System.in);String z="";System.out.println("Enter String:");String y=x.nextLine();for(int i=0;i<y.length();i++){if(!(y.toLowerCase().substring(i,i+1).equals("a")||y.toLowerCase().substring(i,i+1).equals("e")||y.toLowerCase().substring(i,i+1).equals("i")||y.toLowerCase().substring(i,i+1).equals("o")||y.toLowerCase().substring(i,i+1).equals("u"))){z+=y.toLowerCase().substring(i,i+1);}}System.out.print(z);}}
+
+//4.4.3
+
+import java.util.Scanner;public class U4_L4_Activity_Three{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Enter Strings:");String y=x.next();String z=x.next();String a="";if(y.length()!=z.length()){System.out.print("error");}else{for(int i=0;i<z.length();i++){a+=y.substring(i,i+1)+z.substring(i,i+1);}}System.out.print(a);}}
+
+//4.5.1
+
+import java.util.Scanner;public class U4_L5_Activity_One{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Input a String:");String y=x.next();System.out.println("Input an integer:");int z=x.nextInt();for(int i=y.length();i>0;i--){for(int b=0;b<z;b++){System.out.print(y.substring(i-1,i));}}}}
+
+//4.5.2
+
+import java.util.Scanner;public class U4_L5_Activity_Two{public static void main(String[] args){for(int i=1;i<=20;i++){for(int x=0;x<i;x++){System.out.print(i+" ");}System.out.println("");}}}
+
+//String Shortener
+
+import java.util.Scanner;class Assignment4{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("Type the message to be shortened");String message=scan.nextLine().toLowerCase();int index=message.length();int count=0;int noVowels=0;int noRepeats=0;String newString="";while(count<index){if(count==0){newString+=message.charAt(count);count++;}else if(message.charAt(count-1)==' '){newString+=message.charAt(count);count++;}else if(message.charAt(count-1)==message.charAt(count)&&(message.charAt(count)!='a'&&message.charAt(count)!='e'&&message.charAt(count)!='i'&&message.charAt(count)!='o'&&message.charAt(count)!='u')){noRepeats++;count++;}else{if(message.charAt(count)!='a'&&message.charAt(count)!='e'&&message.charAt(count)!='i'&&message.charAt(count)!='o'&&message.charAt(count)!='u'){newString+=message.charAt(count);count++;}else{noVowels++;count++;}}}System.out.printf("\nAlgorithm 1\nVowels removed: %d\nRepeats removed: %d\nAlgorithm 1 message: %s\nAlgorithm 1 characters saved: %d\n",noVowels,noRepeats,newString,(noRepeats+noVowels));index=0;count=0;char lol=' ';String message2=message;message=message.replaceAll(" ","");newString="";for(int i=0;i<message.length();i++){count=0;lol=message.charAt(i);if(newString.indexOf(lol)==-1){for(int x=0;x<message.length();x++){if(message.charAt(x)==lol){count++;}}newString+=count+""+lol;index++;}}System.out.printf("\nAlgorithm 2\nUnique characters found: %d\nAlgorithm 2 message: %s\nAlgorithm 2 characters saved: %d",index,newString,(message2.length()-newString.length()));}}
