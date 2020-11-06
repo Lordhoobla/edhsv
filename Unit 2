@@ -1,0 +1,87 @@
+//2.1.1
+
+import java.util.Scanner;public class U2_L1_Activity_One{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("What is your name?");String name=scan.nextLine();System.out.println("What is your age?");int age=scan.nextInt();System.out.printf("%s is %d years old.",name,age);}}
+
+//2.1.2
+
+import java.util.Scanner;public class U2_L1_Activity_Two{public static void main(String[] args){Scanner scan=new Scanner(System.in);String pwd="letmein";System.out.printf("Default password is %s%n",pwd);System.out.println("Type a new password");pwd=scan.nextLine();System.out.printf("The new password is %s",pwd);}}
+
+//2.2.1
+
+import java.util.Scanner;public class U2_L2_Activity_One{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("What type of item are you buying?");String item=scan.nextLine();System.out.println("How many are you buying?");int amo=scan.nextInt();System.out.println("How much does each one cost?");double price=scan.nextDouble();double ta=price*(double)amo;System.out.printf("%d %s at $%.2f each will cost you $%.2f",amo,item,price,ta);}}
+
+//2.2.2
+
+import java.util.Scanner;public class U2_L2_Activity_Two{public static void main(String[] args){System.out.println("\"I do not fear computers. I fear the lack of them.\"\nIsaac Asimov");}}
+
+//2.2.3
+
+import java.util.Scanner;public class U2_L2_Activity_Three{public static void main(String[] args){System.out.println("   _\n /   \\\n|     |\n \\ _ /");}}
+
+//2.3.1
+
+import java.util.Scanner;public class U2_L3_Activity_One{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("Enter a string:");String conc=scan.nextLine();System.out.println(conc.substring(0,1)+conc.substring(conc.length()-1,conc.length()));}}
+
+//2.3.2
+
+import java.util.Scanner;public class U2_L3_Activity_Two{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("Enter a string:");String str=scan.nextLine();System.out.println(str.substring(1,str.length()-1));}}
+
+//2.3.3
+
+import java.util.Scanner;public class U2_L3_Activity_Three{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("Enter first word:");String str=scan.nextLine();System.out.println("Enter second word:");String str2=scan.nextLine();System.out.printf("Result: %d",(str.toLowerCase()).compareTo(str2.toLowerCase()));}}
+
+//2.3.4
+
+import java.util.Scanner;public class U2_L3_Activity_Four{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("Enter the sentence:");String sent=scan.nextLine();System.out.print(sent.indexOf(' '));}}
+
+//2.4.1
+
+import java.util.Scanner;public class U2_L4_Activity_One{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("Enter first string");String s1=scan.nextLine();System.out.println("Enter second string");String s2=scan.nextLine();System.out.println("Enter number of letters from each word");int n=scan.nextInt();System.out.println(s1.substring(0,n)+s2.substring(s2.length()-n,s2.length()));}}
+
+//2.4.2
+
+import java.util.Scanner;public class U2_L4_Activity_Two{public static void main(String[] args){Scanner scan=new Scanner(System.in);String str1=scan.nextLine();String str2=str1;str1=str1.toUpperCase();System.out.println(str1);System.out.println(str2);}}
+
+//2.5.1
+
+import java.util.Scanner;import edhesive.shapes.*;public class U2_L5_Activity_One{public static void main(String[] args){RegularPolygon hende=new RegularPolygon(11);RegularPolygon tetra=new RegularPolygon(14);RegularPolygon ennea=new RegularPolygon(19);System.out.println(hende+"\n"+tetra+"\n"+ennea);}}
+
+//2.5.2
+
+import java.util.Scanner;import edhesive.shapes.*;public class U2_L5_Activity_Two{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("Type a radius: ");double x=scan.nextDouble();System.out.println("Type a length: ");double y=scan.nextDouble();System.out.println("Type a width: ");double z=scan.nextDouble();Circle onl=new Circle(x);System.out.println(onl);Rectangle on=new Rectangle(y,z);System.out.println(on);}}
+
+//2.5.3
+
+import java.util.Scanner;import edhesive.shapes.*;public class U2_L5_Activity_Three{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("Type the number of sides:");int x=scan.nextInt();System.out.println("Type a side length:");double y=scan.nextDouble();RegularPolygon z=new RegularPolygon(x,y);System.out.println(z);}}
+
+//2.6.1
+
+import java.util.Scanner;import edhesive.shapes.*;public class U2_L6_Activity_One{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("Enter number of sides:");int x=scan.nextInt();System.out.println("Enter side length:");double y=scan.nextDouble();RegularPolygon z=new RegularPolygon(x,y);System.out.println("A "+z+" has perimeter "+z.getPerimeter()+" and area "+z.getArea());}}
+
+//2.6.2
+
+import java.util.Scanner;import edhesive.shapes.*;public class U2_L6_Activity_Two{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("Enter radius:");double x=scan.nextDouble();Circle y=new Circle(x);System.out.println("Area: "+y.getArea()+"\nRadius is being doubled...");y.setRadius(y.getRadius()*2);System.out.println("Area: "+y.getArea());}}
+
+//2.7.1
+
+import java.util.Scanner;public class U2_L7_Activity_One{public static void main(String[] args){Integer a = Integer.MAX_VALUE;a++;System.out.println(a);Integer b = Integer.MIN_VALUE;b--;System.out.println(b);}}
+
+//2.7.2
+
+import java.util.Scanner;public class U2_L7_Activity_Two{public static void main(String[] args){Scanner scan=new Scanner(System.in);Integer a=null;Integer b=null;System.out.println(a + " " + b);System.out.println("Enter values:");a=scan.nextInt();b=scan.nextInt();Double avg=new Double((double)(a + b)/2);System.out.println("Average of "+a+" and "+b+" is "+avg);}}
+
+//2.8.1
+
+import java.util.Scanner;import edhesive.testing.Math;public class U2_L8_Activity_One{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Enter a positive integer: ");int n=x.nextInt();System.out.println("oof");System.out.println((int)(Math.random()*n+1));System.out.println((int)(Math.random()*n+1));System.out.println((int)(Math.random()*n+1));System.out.println((int)(Math.random()*n+1));System.out.println((int)(Math.random()*n+1));System.out.println((int)(Math.random()*n+1));System.out.println((int)(Math.random()*n+1));System.out.println((int)(Math.random()*n+1));System.out.println((int)(Math.random()*n+1));System.out.println((int)(Math.random()*n+1));}}
+
+//2.8.2
+
+import java.util.Scanner;public class U2_L8_Activity_Two{public static void main(String[] args){Scanner x=new Scanner(System.in);System.out.println("Enter distance east:");double y=x.nextDouble();System.out.println("Enter distance north:");double z=x.nextDouble();z=Math.pow(z,2);y=Math.pow(y,2);double xy=y+z;System.out.println("Distance between points: "+(Math.sqrt(xy)));}}
+
+//2.8.3
+
+import java.util.Scanner;import java.lang.Math.*;public class U2_L8_Activity_Three{public static void main(String[] args){Scanner scan=new Scanner(System.in);System.out.println("Enter two integers:");int x=scan.nextInt();int y=scan.nextInt();int z=Math.abs(x-y);System.out.println("Difference: "+z);}}
+
+//Control tower
+
+import java.util.Scanner;import edhesive.assignment2.Airplane;import java.lang.Math.*;public class Assignment2{public static void main(String[] args){Airplane first=new Airplane("AAA01",1,0,0);Scanner scan=new Scanner(System.in);System.out.println("Enter the details of the second airplane (call-sign, distance, bearing and altitude):");String cs=scan.nextLine();double dist=scan.nextDouble();int dir=scan.nextInt();int alt=scan.nextInt();Airplane second=new Airplane(cs.toUpperCase(),dist,dir,alt);System.out.println("\nInitial Positions:");System.out.println("\"Airplane 1\": "+first+"\n\"Airplane 2\": "+second);System.out.println("The distance between the planes is "+(first.distTo(second))+" miles.");System.out.printf("The difference in height between the planes is %d feet.", (Math.abs(first.getAlt()-second.getAlt())));System.out.println("\n\nNew Positions:");first.gainAlt();first.gainAlt();first.gainAlt();first.gainAlt();second.loseAlt();second.loseAlt();first.move(10.5,50);second.move(8.0,125);System.out.println("\"Airplane 1\": "+first+"\n\"Airplane 2\": "+second);System.out.println("The distance between the planes is "+(first.distTo(second))+" miles.");System.out.printf("The difference in height between the planes is %d feet.", (Math.abs(first.getAlt()-second.getAlt())));}}
