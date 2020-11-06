@@ -1,0 +1,71 @@
+//5.1.1
+
+import java.util.Scanner;public class U5_L1_Activity_One{public static void myMethod(){System.out.print("This is a void method");}}
+
+//5.2.1
+
+import java.util.Scanner;public class U5_L2_Activity_One{public static void monthName(int x){switch(x){case 1:System.out.println("January");break;case 2:System.out.println("February");break;case 3:System.out.println("March");break;case 4:System.out.println("April");break;case 5:System.out.println("May");break;case 6:System.out.println("June");break;case 7:System.out.println("July");break;case 8:System.out.println("August");break;case 9:System.out.println("September");break;case 10:System.out.println("October");break;case 11:System.out.println("November");break;default:System.out.println("December");}}}
+
+//5.2.2
+
+import java.util.Scanner;public class U5_L2_Activity_Two{public static void reverser(String x){for(int i=x.length()-1;i>=0;i--){System.out.print(x.charAt(i));}}}
+
+//5.2.3
+
+import java.util.Scanner;public class U5_L2_Activity_Three{public static void swap(int x,double y){System.out.print(y+" "+x);}}
+
+//5.2.4
+
+import java.util.Scanner;public class U5_L2_Activity_Four{public static void realTime(int x){System.out.printf("Hours: %d\nMinutes: %d\nSeconds: %d",(x/3600),(x/60-(x/3600)*60),(x%60));}}
+
+//5.3.1
+
+import java.util.Scanner;import edhesive.shapes.*;public class U5_L3_Activity_One{public static void makeSquare(Rectangle x){x.setWidth(x.getLength());}}
+
+//5.3.2
+
+import java.util.Scanner;import edhesive.shapes.*;import edhesive.testing.Math;public class U5_L3_Activity_Two{public static void randomize(RegularPolygon x){x.setNumSides((int)(Math.random()*11+10));x.setSideLength(Math.random()*7+5);}}
+
+//5.3.3
+
+import java.util.Scanner;import edhesive.shapes.*;public class U5_L3_Activity_Three{public static void updateRadius(Circle y,int x){y.setRadius(x);}}
+
+//5.4.1
+
+import java.util.Scanner;import edhesive.shapes.*;public class U5_L4_Activity_One{public static double areaSum(Circle x,Circle y){return x.getArea()+y.getArea();}}
+
+//5.4.2
+
+import java.util.Scanner;public class U5_L4_Activity_Two{public static double average(int x,int y,int z,int q,int w){return (double)(x+y+z+q+w)/5;}}
+
+//5.4.3
+
+import java.util.Scanner;import edhesive.shapes.*;import java.lang.Math;public class U5_L4_Activity_Three{public static double areaDiff(Rectangle x,Rectangle y){return Math.abs(y.getArea()-x.getArea());}}
+
+//5.4.4
+
+import java.util.Scanner;public class U5_L4_Activity_Four{public static boolean hasRepeat(String x){for(int i=0;i<x.length()-1;i++){if(x.charAt(i)==x.charAt(i+1)){return true;}}return false;}}
+
+//5.5.1
+
+public class Post{private String us,co;private int fa;public Post(String x,String y,int z){us=x;co=y;fa=z;}public String toString(){return us+"\n"+co+"\n\tFavorited by "+fa+" users";}}
+
+//5.5.2
+
+public class Elevator{private int maxFloor,currentFloor;private boolean inService;public Elevator(int max, int start){if(max>1){maxFloor=max;}else{maxFloor=2;}if(start>=1&&start<=maxFloor){currentFloor=start;}else{currentFloor=1;}inService=true;}public int getMaxFloor(){return maxFloor;}public int getCurrentFloor(){return currentFloor;}public boolean isInService(){return inService;}public void toggleInService(){inService=!inService;}public void goToFloor(int floor){if(floor>=1&&floor<=maxFloor&&inService){currentFloor=floor;}}}
+
+//5.6
+
+public class Vehicle{private int location;public Vehicle(){location=0;}public Vehicle(int loc){if(loc>=-20&&loc<=20){location=loc;}else{location=0;}}public void forward(){if(location<20){location++;}}public void backward(){if(location>-20){location--;}}public int getLocation(){return location;}public String toString(){String x="";for(int i=0;i<location+20;i++){x+=" ";}return x+"@";}}
+
+//5.7
+
+import java.lang.*;public class RightTriangle extends Object{private double a,bs;public RightTriangle(){a=1;bs=1;}public RightTriangle(double x,double y){if(x>0){bs=x;}else{bs=1;}if(y>0){a=y;}else{a=1;}}public double getBase(){return bs;}public double getHeight(){return a;}public void getBase(double bs){if(bs>0){this.bs=bs;}}public void setHeight(double ht){if(ht>0){a=ht;}}public double getHypotenuse(){return Math.sqrt(Math.pow(a,2)+Math.pow(bs,2));}public double getPerimeter(){return a+bs+getHypotenuse();}public double getArea(){return (bs*a)/2;}public boolean equals(RightTriangle rt){return rt.getHeight()==a&&rt.getBase()==bs;}public String toString(){return "right triangle with base "+bs+", height "+a+", hypotenuse "+getHypotenuse();}}
+
+//5.8
+
+public class Student{private static int sid=1;private String fname,lname;private int gl,si;private double gpa;public Student(){fname="None";lname="None";gl=0;gpa=0;si=sid;sid++;}public Student(String f,String l,int g,double p){fname=f;lname=l;if(g>=0&&g<=12){gl=g;}else{gl=0;}if(p>=0&&p<=4.5){gpa=p;}else{gpa=0;}si=sid;sid++;}public String toString(){return lname+", "+fname+"\nGPA: "+gpa+"\nGrade Level: "+gl+" id # "+si;}}
+
+//Fraction
+
+public class Fraction{private static int numOf;private int n;private int d;public Fraction(){n=1;d=1;numOf++;}public Fraction(int x,int y){if(x>0){n=x;}else{n=1;}if(y>0){d=y;}else{d=1;}numOf++;}public int getNumerator(){return n;}public int getDenominator(){return d;}public static int getNumFractions(){return numOf;}public String toString(){return n+"/"+d;}public String mixedNumber(){if(n>d){return (n/d)+" "+(n%d)+"/"+d;}else{return n+"/"+d;}}public void setNumerator(int x){if(x>0){n=x;}}public void setDenominator(int x){if(x>0){d=x;}}public void add(int x,int y){if(x>0&&y>0){n=n*y+x*d;d*=y;}}public void add(Fraction frac){n=n*frac.getDenominator()+frac.getNumerator()*d;d*=frac.getDenominator();}public void multiply(int x,int y){if(x>0&&y>0){n*=x;d*=y;}}public void multiply(Fraction frac){n*=frac.getNumerator();d*=frac.getDenominator();}}
