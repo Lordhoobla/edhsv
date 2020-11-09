@@ -1,0 +1,31 @@
+//6.1.1
+
+import java.util.Scanner;public class U6_L1_Activity_One{public static void main(String[] args){Scanner scan=new Scanner(System.in);int[] arr=new int[3];arr[0]=scan.nextInt();arr[1]=scan.nextInt();arr[2]=scan.nextInt();System.out.println("Contents: "+arr[0]+" "+arr[1]+" "+arr[2]);System.out.println("Sum: "+(arr[0]+arr[1]+arr[2]));}}
+
+//6.1.2
+
+import java.util.Scanner;public class U6_L1_Activity_Two{public static void main(String[] args){int[] h=new int[10];h[0]=0;h[1]=1;h[2]=h[0]+h[1];h[3]=h[1]+h[2];h[4]=h[2]+h[3];h[5]=h[3]+h[4];h[6]=h[4]+h[5];h[7]=h[5]+h[6];h[8]=h[6]+h[7];h[9]=h[7]+h[8];Scanner scan=new Scanner(System.in);int i=scan.nextInt();if(i>=0&&i<10){System.out.println(h[i]);}}}
+
+//6.2.1
+
+public class U6_L2_Activity_One{public static boolean allNegative(double[] x){for(double y:x){if(y>=0){return false;}}return true;}}
+
+//6.2.2
+
+public class U6_L2_Activity_Two{public static int numEven(int[] x){int z=0;for(int y:x){if(y%2==0){z++;}}return z;}}
+
+//6.2.3
+
+public class U6_L2_Activity_Three{public static boolean hasDuplicates(int[] x){for(int i=0;i<x.length;i++){for(int j=i+1;j<x.length;j++){if(x[i]==x[j]){return true;}}}return false;}}
+
+//6.3.1
+
+public class U6_L3_Activity_One{public static String findLongest(String[] words){int l=0;String y="";for(String x:words){if(x.length()>l){l=x.length();y=x;}}return y;}}
+
+//6.3.2
+
+import java.lang.*;public class U6_L3_Activity_Two{public static void reverse(String[] words){for(String x:words){StringBuilder y=new StringBuilder(x);System.out.println(y.reverse());}}}
+
+//6.3.3
+
+public class U6_L3_Activity_Three{public static void printIngs(String[] x){for(String y:x){if(y.contains("ing")){System.out.println(y);}}}}
