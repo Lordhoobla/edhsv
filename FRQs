@@ -1,0 +1,23 @@
+//PrimeFinder Part A
+
+public static int primesBetween(int lower, int upper){int count=0;while(lower<=upper){if(isPrime(lower)){count++;}lower++;}return count;}
+
+//PrimeFinder Part B
+
+public static int gapToNextPrime(int num){int count=0;while(!isPrime(num)){count++;num++;}return count;}
+
+//CaesarCipher Part A
+
+public static String encode(String msg, int shift){String y="";for(int i=0;i<msg.length();i++){int x=letterToNum(msg.charAt(i)+"");for(int j=0;j<shift;j++){if(x==25){x=-1;}x++;}y+=numToLetter(x);}return y;}
+
+//CaesarCipher Part B
+
+public static String allEncodings(String msg){String x=msg+"\n";for(int i=0;i<25;i++){x+=encode(msg,i+1)+"\n";}return x;}
+
+//Digit Summarizer Part A
+
+public static int digitalRoot(int n){while(n>=10){n=digitSum(n);}return n;}
+
+//Digit Summarizer Part B
+
+public static boolean containsRoot(int n){return Integer.toString(n).contains(Integer.toString(digitalRoot(n)));}
