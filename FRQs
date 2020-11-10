@@ -21,3 +21,11 @@ public static int digitalRoot(int n){while(n>=10){n=digitSum(n);}return n;}
 //Digit Summarizer Part B
 
 public static boolean containsRoot(int n){return Integer.toString(n).contains(Integer.toString(digitalRoot(n)));}
+
+//Fundraiser
+
+public class Fundraiser{private double tar,don;private int numDon;public Fundraiser(double x){tar=x;}public double averageDonation(){if(numDon==0){return 0.0;}return don/(double)numDon;}public void addDonation(double x){if(x>0){don+=x;numDon++;}}public double distanceToTarget(){if(don>=tar){return 0.0;}return tar-don;}}
+
+//TriangleNumberTracker
+
+public class TriangleNumberTracker{private int tnumber,ct;public TriangleNumberTracker(int x){tnumber=0;ct=x;numset();}public void numset(){tnumber=0;for(int i=1;i<=ct;i++){tnumber+=i;}}public int currentTriangle(){return tnumber;}public void nextTriangle(){ct++;numset();}public void prevTriangle(){if(ct>1){ct--;}numset();}}
