@@ -1,0 +1,23 @@
+//NOTE: WHEN "MAIN" IS WRITTEN, PUT THAT IN THE MAIN METHOD
+//Activity 1
+
+/*MAIN*/Review rev=new Review();double x=rev.sentimentVal("abandoned");
+
+//Activity 2
+
+/*MAIN*/Review x=new Review();System.out.print(x.starRating("ReviewSample1.txt"));
+/*in class*/public static int starRating(String fileName){if(sentimentVal(textToString(fileName))<-10){return 0;}else if(sentimentVal(textToString(fileName))>25){return 4;}else if(sentimentVal(textToString(fileName))>10){return 3;}else if(sentimentVal(textToString(fileName))>0){return 2;}else{return 1;}}
+
+//Activity 3
+
+/*MAIN*/Review x=new Review();System.out.println(x.fakeReview("SimpleReview.txt"));
+/*in class*/String x=textToString(fileName).replaceAll(",","");String y=textToString("negativeAdjectives.txt");String z=textToString("positiveAdjectives.txt");String[] ar=z.split(" ");String[] arr=x.split(" ");x="";for(int i=0;i<arr.length;i++){if(y.indexOf(arr[i])!=-1&&arr[i].length()>2){arr[i]=ar[((int)(Math.random()*ar.length))];}x+=arr[i]+" ";}return x;
+
+//Activity 4
+
+/*MAIN*/Review x=new Review();System.out.println(x.extremeFakeReview("SimpleReview.txt"));
+/*in class*/String x=textToString(fileName).replaceAll(",","");String y=textToString("cleanSentiment.csv").replaceAll("[0-9]","");String z=textToString("positiveAdjectives.txt");String[] ar=z.split(" ");String[] arr=x.split(" ");x="";for(int i=0;i<arr.length;i++){if(y.indexOf(arr[i])!=-1&&arr[i].length()>2){arr[i]=ar[((int)(Math.random()*ar.length))];}x+=arr[i]+" ";}return x;
+
+//Activity 5
+
+import java.util.Scanner;import java.lang.Math;import java.util.ArrayList;class consumerReviewProgram{private double a1,b1,c1,m,b2;public static void main(String[] args){Scanner scan=new Scanner(System.in);consumerReviewProgram x=new consumerReviewProgram();String choice="";do{System.out.println("would you like to solve for linear and quadratic equations(lqr) or just factor(fql)");choice=scan.nextLine();if(choice.toLowerCase().contains("lqr")){System.out.println(x.lqr_solve()+"\n\n");}else if(choice.toLowerCase().contains("fql")){System.out.println(x.fql_solve()+"\n\n");}}while(choice.toLowerCase().contains("stop"));scan.close();}public void setNums(String choice){Scanner scan=new Scanner(System.in);if(choice.contains("a")){System.out.print("A: ");a1=scan.nextDouble();}if(choice.contains("b")){System.out.print("B: ");b1=scan.nextDouble();}if(choice.contains("c")){System.out.print("C: ");c1=scan.nextDouble();}if(choice.contains("d")){System.out.print("m: ");m=scan.nextDouble();}if(choice.contains("e")){System.out.print("other b: ");b2=scan.nextDouble();}scan.close();}public String fql_solve(){setNums("abc");double[] factor=factorx(a1,b1,c1);return "\n\n\nx = "+factor[0]+"\nx = "+factor[1];}public String lqr_solve(){setNums("abcde");c1-=b2;b1-=m;double[] factor=factorx(a1,b1,c1);return "\n\n\n("+factor[0]+" , "+(m*factor[0]+b2)+")\n("+factor[1]+" , "+(m*factor[1]+b2)+")";}public double[] factorx(double x,double y,double z){a1=x;b1=y;c1=z;double a=a1*c1;double x_one=0;double x_two=0;System.out.println(a);while((x_one*x_two!=a&&x_one+x_two!=b1)||a==0){if(a>0){while(x_one<a){x_two=1;while(x_two<a){x_two++;if(x_one*x_two==a&&x_one+x_two==b1){break;}x_two*=-1;if(x_one*x_two==a&&x_one+x_two==b1){break;}x_two*=-1;if(x_one==x_two){break;}}if(x_one*x_two==a&&x_one+x_two==b1){break;}x_one*=-1;x_two=1;while(x_two<a){x_two++;if(x_one*x_two==a&&x_one+x_two==b1){break;}x_two*=-1;if(x_one*x_two==a&&x_one+x_two==b1){break;}x_two*=-1;if(x_one==x_two){break;}}if(x_one*x_two==a&&x_one+x_two==b1){break;}x_one*=-1; x_one++;System.out.println(x_one+" "+x_two);if(x_one==x_two){break;}}}else if(a==0){x_one=0;x_two=b1;break;}else{while(x_one>a&&x_one<Math.abs(a)){x_two=1;while(x_two>a&&x_two<Math.abs(a)){x_two++;if(x_one*x_two==a&&x_one+x_two==b1){break;}x_two*=-1;if(x_one*x_two==a&&x_one+x_two==b1){break;}x_two*=-1;if(x_one==x_two){break;}}if(x_one*x_two==a&&x_one+x_two==b1){break;}x_one*=-1;x_two=1;while(x_two>a&&x_two<Math.abs(a)){x_two++;if(x_one*x_two==a&&x_one+x_two==b1){break;}x_two*=-1;if(x_one*x_two==a&&x_one+x_two==b1){break;}x_two*=-1;if(x_one==x_two){break;}}if(x_one*x_two==a&&x_one+x_two==b1){break;}x_one*=-1;x_one++;System.out.println(x_one+" "+x_two);if(x_one==x_two){break;}}}}x_one=-(x_one)/a1;x_two=-(x_two)/a1;System.out.printf("%.2f %.2f",x_one,x_two);double[] d={x_one,x_two};return d;}}
