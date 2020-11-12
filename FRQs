@@ -22,6 +22,9 @@ public static int digitalRoot(int n){while(n>=10){n=digitSum(n);}return n;}
 
 public static boolean containsRoot(int n){return Integer.toString(n).contains(Integer.toString(digitalRoot(n)));}
 
+//Position
+public class Position{private double dist,x,y;public Position(double z,double w){x=z;y=w;dist=0;}public void move(double d,String dir){dist+=d;switch(dir.charAt(0)){case 'E':x+=d;break;case 'W':x-=d;break;case 'N':y+=d;break;case 'S':y-=d;break;}}public String toString(){return "("+x+", "+y+")";}public double totalDistance(){return dist;}}
+
 //Fundraiser
 
 public class Fundraiser{private double tar,don;private int numDon;public Fundraiser(double x){tar=x;}public double averageDonation(){if(numDon==0){return 0.0;}return don/(double)numDon;}public void addDonation(double x){if(x>0){don+=x;numDon++;}}public double distanceToTarget(){if(don>=tar){return 0.0;}return tar-don;}}
@@ -29,3 +32,28 @@ public class Fundraiser{private double tar,don;private int numDon;public Fundrai
 //TriangleNumberTracker
 
 public class TriangleNumberTracker{private int tnumber,ct;public TriangleNumberTracker(int x){tnumber=0;ct=x;numset();}public void numset(){tnumber=0;for(int i=1;i<=ct;i++){tnumber+=i;}}public int currentTriangle(){return tnumber;}public void nextTriangle(){ct++;numset();}public void prevTriangle(){if(ct>1){ct--;}numset();}}
+
+//Heights Part A
+
+public boolean isPeak(int r,int c){return r>0&&r<heights.length-1&&c>0&&c<heights[r].length-1&&heights[r-1][c]<heights[r][c]&&heights[r+1][c]<heights[r][c]&&heights[r][c-1]<heights[r][c]&&heights[r][c+1]<heights[r][c]&&heights[r+1][c+1]<heights[r][c]&&heights[r+1][c-1]<heights[r][c]&&heights[r-1][c+1]<heights[r][c]&&heights[r-1][c-1]<heights[r][c];}
+
+//Heights Part B
+
+public ArrayList<String> peakInfo(){ArrayList<String> ret=new ArrayList<String>();for(int i=0;i<heights.length-1;i++){for(int j=0;j<heights[i].length-1;j++){if(isPeak(i,j)){ret.add("Peak at ("+i+", "+j+"): Height "+heights[i][j]);}}}return ret;}
+
+//RowCompare Part A
+
+import java.lang.StringBuffer;public class RowCompare{public static boolean isRow(int[] arr,int[][] mat,int limit){if(limit<0||limit>mat.length){return false;}StringBuffer compare1=new StringBuffer();StringBuffer compare2=new StringBuffer();for(int i=0;i<limit;i++){for(int j=0;j<mat[i].length;j++){compare1.append(Integer.toString(mat[i][j]));compare2.append(Integer.toString(arr[j]));}if(compare1.toString().equals(compare2.toString())){return true;}compare1.delete(0,compare1.length());compare2.delete(0,compare2.length());}return false;}}
+
+//RowCompare Part B
+
+public static int uniqueRows(int[][] mat){int count=0;boolean x=isRow(mat[0],mat,1);StringBuilder list=new StringBuilder();StringBuilder check=new StringBuilder();for(int i=0;i<mat.length;i++){for(int j=0;j<mat[i].length;j++){check.append(mat[i][j]+"");}if(list.toString().indexOf(check.toString())==-1){list.append(check.toString()+" ");count++;}check.delete(0,check.length());}return count;}
+
+//Warehouse Part A
+
+public boolean fulfillOrder(String code,int orderQuant){for(Product[] stockrow:stock){for(Product block:stockrow){if(block.getProductCode().equals(code)&&block.getQuant()>=orderQuant){block.setQuant(block.getQuant()-orderQuant);return true;}}}return false;}
+
+//Warehouse Part B
+
+//GO INTO THE "Product.java" FILE AND TAKE OUT THE "final" in "private final String productCode;" then add the method "public void setProductCode(String x){productCode=x;}" INSIDE THE PRODUCT CLASS
+public boolean reposition(int frRow,int frCol,int toRow,int toCol){try{if(stock[toRow][toCol].getQuant()==0){String code=stock[toRow][toCol].getProductCode();stock[toRow][toCol].setQuant(stock[frRow][frCol].getQuant());stock[toRow][toCol].setProductCode(stock[frRow][frCol].getProductCode());stock[frRow][frCol].setProductCode(code);stock[frRow][frCol].setQuant(0);return true;}return false;}catch(Exception e){return false;}}
