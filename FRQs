@@ -23,6 +23,7 @@ public static int digitalRoot(int n){while(n>=10){n=digitSum(n);}return n;}
 public static boolean containsRoot(int n){return Integer.toString(n).contains(Integer.toString(digitalRoot(n)));}
 
 //Position
+
 public class Position{private double dist,x,y;public Position(double z,double w){x=z;y=w;dist=0;}public void move(double d,String dir){dist+=d;switch(dir.charAt(0)){case 'E':x+=d;break;case 'W':x-=d;break;case 'N':y+=d;break;case 'S':y-=d;break;}}public String toString(){return "("+x+", "+y+")";}public double totalDistance(){return dist;}}
 
 //Fundraiser
@@ -32,6 +33,26 @@ public class Fundraiser{private double tar,don;private int numDon;public Fundrai
 //TriangleNumberTracker
 
 public class TriangleNumberTracker{private int tnumber,ct;public TriangleNumberTracker(int x){tnumber=0;ct=x;numset();}public void numset(){tnumber=0;for(int i=1;i<=ct;i++){tnumber+=i;}}public int currentTriangle(){return tnumber;}public void nextTriangle(){ct++;numset();}public void prevTriangle(){if(ct>1){ct--;}numset();}}
+
+//Hotel Rooms Part A
+
+public int checkIn(String name, int number){int check=-1;int id=0;for(int i=0;i<rooms.size();i++){if(rooms.get(i).getNumber()==number){check++;id=i;}}if(check==-1){return check;}if(rooms.get(id).isOccupied()){return 0;}rooms.get(id).checkInNewGuest(name);return 1;}
+
+//Hotel Rooms Part B
+
+public ArrayList<Integer> availableRoomNumbers(){ArrayList<Integer> nums=new ArrayList<Integer>();for(Room room:rooms){if(!room.isOccupied()){nums.add(room.getNumber());}}return nums;}
+
+//SequenceProperties Part A
+
+public static int[] getDiffs(int[] seq){int[] seq2=new int[seq.length-1];for(int i=0;i<seq2.length;i++){seq2[i]=seq[i+1]-seq[i];}return seq2;}
+
+//SequenceProperties Part B
+
+public static boolean isLinear(int[] seq){boolean check=true;int[] seq2=getDiffs(seq);if(seq2[0]<0){for(int i=0;i<seq2.length;i++){if(seq2[i]>0){check=false;}}}else{for(int i=0;i<seq2.length;i++){if(seq2[i]<0){check=false;}}}for(int i=0;i<seq2.length-1;i++){if(seq2[i]!=seq2[i+1]){check=false;}}return check;}
+
+//SequenceProperties Part C
+
+public static boolean isQuadratic(int[] seq){return !isLinear(seq)&&isLinear(getDiffs(seq));}
 
 //Heights Part A
 
