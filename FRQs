@@ -56,6 +56,7 @@ public static boolean isQuadratic(int[] seq){return !isLinear(seq)&&isLinear(get
 
 //High Scores Part A
 
+/*NOTE, MAKE SURE YOU IMPORT COLLECTIONS THROUGH "import java.util.Collections;"*/
 public void moveUp(int pos){int check=scoreboard.get(pos).getHighScore();for(int i=0;i<scoreboard.size();i++){if(check>scoreboard.get(i).getHighScore()){Collections.swap(scoreboard,i,pos);}}}
 
 //High Scores Part B
@@ -64,7 +65,6 @@ public boolean newScore(String name,int score){for(int i=0;i<scoreboard.size();i
 
 //Heights Part A
 
-/*NOTE, MAKE SURE YOU IMPORT COLLECTIONS THROUGH "import java.util.Collections;"*/
 public boolean isPeak(int r,int c){return r>0&&r<heights.length-1&&c>0&&c<heights[r].length-1&&heights[r-1][c]<heights[r][c]&&heights[r+1][c]<heights[r][c]&&heights[r][c-1]<heights[r][c]&&heights[r][c+1]<heights[r][c]&&heights[r+1][c+1]<heights[r][c]&&heights[r+1][c-1]<heights[r][c]&&heights[r-1][c+1]<heights[r][c]&&heights[r-1][c-1]<heights[r][c];}
 
 //Heights Part B
