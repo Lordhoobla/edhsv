@@ -16,6 +16,7 @@
 
 /*MAIN*/Review x=new Review();System.out.print(x.starRating("ReviewSample1.txt"));
 /*in class*/public static int starRating(String fileName){if(sentimentVal(textToString(fileName))<-10){return 0;}else if(sentimentVal(textToString(fileName))>25){return 4;}else if(sentimentVal(textToString(fileName))>10){return 3;}else if(sentimentVal(textToString(fileName))>0){return 2;}else{return 1;}}
+/*above the starRating method*/public static double totalSentiment(String filename){int count=0;double score=0;String[] words=textToString(filename).split(" ");for(String word:words){count++;score+=sentimentVal(word);}return score/(double)count;}
 
 /*ANSWERS FOR FRQ
   *4. It will first call the textToString method to turn the text in the file into a string. Then will call the sentimentVal method which will return the numeric value of the text, then will return the numeric value to however it was called.
