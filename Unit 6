@@ -24,7 +24,7 @@ public class U6_L3_Activity_One{public static String findLongest(String[] words)
 
 //6.3.2
 
-import java.lang.*;public class U6_L3_Activity_Two{public static void reverse(String[] words){for(String x:words){StringBuilder y=new StringBuilder(x);System.out.println(y.reverse());}}}
+import java.lang.*;public class U6_L3_Activity_Two{public static void reverse(String[] words){for(String x:words){System.out.println(new StringBuilder(x).reverse());}}}
 
 //6.3.3
 
