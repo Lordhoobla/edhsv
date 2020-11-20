@@ -29,3 +29,27 @@ import java.lang.*;public class U6_L3_Activity_Two{public static void reverse(St
 //6.3.3
 
 public class U6_L3_Activity_Three{public static void printIngs(String[] x){for(String y:x){if(y.contains("ing")){System.out.println(y);}}}}
+
+//6.4.1
+
+public class U6_L4_Activity_One{public static boolean insert(String[] words,String newWord,int place){if(place<0||place>=words.length){return false;}for(int i=0;i<words.length;i++){if(i==place){place=-1;for(int j=words.length-1;j>i;j--){words[j]=words[j-1];}words[i]=newWord;}}return true;}}
+
+//6.4.2
+
+public class U6_L4_Activity_Two{public static void swap(int[] arr,int i,int j){int check=arr[j];arr[j]=arr[i];arr[i]=check;}public static void allSwap(int[] arr){for(int i=0;i<arr.length;i+=2){int check=arr[i];arr[i]=arr[i+1];arr[i+1]=check;}}}
+
+//6.5.1
+
+public class U6_L5_Activity_One{public static void reverse(String[] words){for(String s:words){for(int i = s.length()-1; i >=0; i--){System.out.print(s.substring(i,i+1));}System.out.println();}}}
+
+//6.5.2
+
+public class U6_L5_Activity_Two{public static int sum(int[] arr){int s=0;for(int i:arr){s+=i;}return s;}}
+
+//6.5.3
+
+public class U6_L5_Activity_Three{public static double avg(double[] arr){double all=0;for(double n:arr){all+=n;}return all/arr.length;}}
+
+//Statistics
+/*NumStatsArray*/public class NumStatsArray{private final double[] stats;public NumStatsArray(double[] a){stats=a;}public String toString(){String ret="{";for(double check:stats){ret+=check+", ";}ret=ret.substring(0,ret.length()-2)+"}";return ret;}public double average(){double sum=0;for(double check:stats){sum+=check;}return sum/(double)stats.length;}public double range(){double highest=Double.MIN_VALUE,lowest=Double.MAX_VALUE;for(double check:stats){if(check>highest){highest=check;}if(check<lowest){lowest=check;}}return highest-lowest;}public int sortStatus(){if(stats.length<=1){return 1;}if(stats[0]<=stats[1]){for(int i=0;i<stats.length-1;i++){if(stats[i]>stats[i+1]){return 0;}}return 1;}else{for(int i=0;i<stats.length-1;i++){if(stats[i]<stats[i+1]){return 0;}}return -1;}}}
+/*StringStatsArray*/public class StringStatsArray{private final String[] stats;public StringStatsArray(String[] a){stats=a;}public String toString(){String ret="{";for(String check:stats){ret+="\""+check+"\", ";}ret=ret.substring(0,ret.length()-2)+"}";return ret;}public double averageLength(){double sum=0;for(String check:stats){sum+=check.length();}return sum/(double)stats.length;}public int search(String target){for(int i=0;i<stats.length;i++){if(stats[i].equals(target)){return i;}}return -1;}public int sortStatus(){if(stats.length<=1){return 1;}if((int)stats[0].charAt(0)<(int)stats[1].charAt(0)){for(int i=0;i<stats.length-1;i++){if((int)stats[i].charAt(0)>(int)stats[i+1].charAt(0)){return 0;}}return 1;}else if((int)stats[0].charAt(0)>(int)stats[1].charAt(0)){for(int i=0;i<stats.length-1;i++){if((int)stats[i].charAt(0)<(int)stats[i+1].charAt(0)){return 0;}}return -1;}else{for(int i=0;i<stats.length-1;i++){if((int)stats[i].charAt(0)<(int)stats[i+1].charAt(0)){for(int j=i;j<stats.length-1;j++){if((int)stats[j].charAt(0)>(int)stats[j+1].charAt(0)){return 0;}}return 1;}if((int)stats[i].charAt(0)>(int)stats[i+1].charAt(0)){for(int j=i;j<stats.length-1;j++){if((int)stats[j].charAt(0)<(int)stats[j+1].charAt(0)){return 0;}}return -1;}}return 1;}}}
