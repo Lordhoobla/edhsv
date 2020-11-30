@@ -1,1 +1,34 @@
+//NOTE: WHEN "MAIN" IS WRITTEN, PUT THAT IN THE MAIN CLASS
 //Activity 1
+
+/*ANSWERS FOR FRQ
+ *1. Edhesive, Reddit, Github
+ *2. Email, Name, Keyboard Driver
+ *3. A sequence of one or more characters that can be used to divide regions of data streams, these are important in determining where and what type of data is being processed.
+ *4. By determining the pattern of data being used in the columns and rows that resemble it.
+ *5. Computer Science, Aviation
+ *6. What challenges might a computer science engineer might encounter that are out of the ordinary? How can someone get into the computer science field?
+ *7. Personal experience from professionals, this can apply in any field.
+ *8. Thousands, larger datasets account for more accuracy
+ *9. By having a larger population of customers, the company can have a more customizable experience for the user seeing the feedback they receive from a larger variety of users.
+ *10. The dataset is being collected through feedback and research from different sources.
+ *11. Yes, it's worth it since the customers are those who are benefitting from the use of that data along with the companies use of the data.
+*/
+
+//Activity 2
+
+/*MAIN CLASS*/public class Cereal{private String name,type;private double calories,protein,fat,sodium,fiber,carbohydrates,sugar,potassium,vitamins,shelf,weight,cups,rating;public Cereal(){name="";type="";}public Cereal(String a,String b,double c,double d,double e,double f,double g,double h,double i,double j,double k,double l,double m,double n,double o){name=a;type=b;calories=c;protein=d;fat=e;sodium=f;fiber=g;carbohydrates=h;sugar=i;potassium=j;vitamins=k;shelf=l;weight=m;cups=n;rating=o;}public void setName(String name){this.name=name;}public void setType(String type){this.type=type;}public void setCalories(double cal){if(cal>0){calories=cal;}}public void setProtein(double prot){if(prot>0){protein=prot;}}public void setFat(double fat){if(fat>0){this.fat=fat;}}public void setSodium(double sod){if(sod>0){sodium=sod;}}public void setFiber(double fib){if(fib>0){fiber=fib;}}public void setCarbs(double carb){if(carb>0){carbohydrates=carb;}}public void setSugar(double sugar){if(sugar>0){this.sugar=sugar;}}public void setPotassium(double pot){if(pot>0){potassium=pot;}}public void setVitamins(double vit){if(vit>0){vitamins=vit;}}public void setShelf(double shelf){if(shelf>0){this.shelf=shelf;}}public void setWeight(double wei){if(wei>0){weight=wei;}}public void setCups(double cup){if(cup>0){cups=cup;}}public void setRating(double rat){if(rat>0){rating=rat;}}public String getName(){return name;}public String getType(){return type;}public double getCalories(){return calories;}public double getProtein(){return protein;}public double getFat(){return fat;}public double getSodium(){return sodium;}public double getFiber(){return fiber;}public double getCarbs(){return carbohydrates;}public double getSugar(){return sugar;}public double getPotassium(){return potassium;}public double getVitamins(){return vitamins;}public double getShelf(){return shelf;}public double getWeight(){return weight;}public double getCups(){return cups;}public double getRating(){return rating;}public String toString(){return name+" | "+type+" | "+calories+" | "+protein+" | "+fat+" | "+sodium+" | "+fiber+" | "+carbohydrates+" | "+sugar+" | "+potassium+" | "+vitamins+" | "+shelf+" | "+weight+" | "+cups+" | "+rating;}public static void main(String[] args){Cereal x=new Cereal("100% Bran","C",70,4,1,130,10,5,6,280,25,3,1,0.33,68.402973);System.out.print(x);}}
+
+/*ANSWERS FOR FRQ
+ *1. Cereal
+ *2. /*Question provided*/
+ *3. public class Cereal
+ *4. fourteen
+ *5. String for the name and type then double for the rest of them
+ *6. done
+ *7. done
+ *8. What is the calorie count of a given cereal?
+ *9. What are the ingredients of a given Cereal?
+ *10. Add an ingredients variable
+*/
+
