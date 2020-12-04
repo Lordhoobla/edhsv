@@ -1,0 +1,47 @@
+//7.1.1
+
+import java.util.Scanner;import java.util.ArrayList;public class U7_L1_Activity_One{public static void main(String[] args){Scanner scan=new Scanner(System.in);ArrayList<String> words=new ArrayList<String>();String entered;System.out.println("Please enter words, enter STOP to stop the loop.");do{entered=scan.next();if(entered.equals("STOP")){break;}words.add(entered);}while(true);System.out.printf("\n%d\n%s\n",words.size(),words);if(words.size()>2){words.remove(0);words.remove(words.size()-1);}System.out.print(words);}}
+
+//7.2.1
+
+import java.util.Scanner;import java.util.ArrayList;public class U7_L2_Activity_One{public static void main(String[] args){Scanner scan=new Scanner(System.in);ArrayList<String> list=new ArrayList<String>();String word;System.out.println("Please enter words, enter STOP to stop the loop.");do{word=scan.next();if(word.equals("STOP")){break;}list.add(word);}while(true);System.out.println("\n"+list);for(int i=list.size()-1;i>=0;i--){System.out.println(list.get(i));}}}
+
+//7.2.2
+
+import java.util.ArrayList;public class U7_L2_Activity_Two{public static double average(ArrayList<Double> nums){double sum=0;for(Double num:nums){sum+=num;}return sum/(double)nums.size();}}
+
+//7.2.3
+
+import java.util.ArrayList;public class U7_L2_Activity_Three{public static ArrayList<Integer> getOdds(ArrayList<Integer> vals){ArrayList<Integer> odds=new ArrayList<Integer>();for(Integer num:vals){if(num%2!=0){odds.add(num);}}return odds;}}
+
+//7.3.1
+
+import java.util.ArrayList;public class U7_L3_Activity_One{public static void shiftRight(ArrayList<String> objects){String last=objects.get(objects.size()-1);for(int i=objects.size()-1;i>0;i--){objects.set(i,objects.get(i-1));}objects.set(0,last);}}
+
+//7.3.2
+
+import java.util.ArrayList;public class U7_L3_Activity_Two{public static void printStatistics(ArrayList<Integer> nums){int sum=0;ArrayList<Integer> occurences=new ArrayList<Integer>();ArrayList<Integer> count=new ArrayList<Integer>();for(Integer num:nums){sum+=num;}System.out.printf("Sum: %d\nAverage: %f\nMode: ",sum,((double)sum/(double)nums.size()));Integer[] num=new Integer[nums.size()];num=nums.toArray(num);for(int check:num){if(!count.contains(check)){count.add(check);occurences.add(occurence(num,check));}}int highest=0;for(Integer check:occurences){if(check>highest){highest=check;}}Integer[] occ=new Integer[occurences.size()];occ=occurences.toArray(occ);if(occurence(occ,highest)>=2){System.out.print("no single mode");}else{System.out.print(count.get(occurences.indexOf(highest)));}}public static int occurence(Integer arr[],Integer x) {int res=0;for(int i=0;i<arr.length;i++){if(x.equals(arr[i])){res++;}}return res;}}
+
+//7.4.1
+
+import java.util.ArrayList;public class U7_L4_Activity_One{public static int countInitial(ArrayList<String> list, String letter){int count=0;for(String word:list){if(word.toLowerCase().startsWith(letter.toLowerCase())){count++;}}return count;}}
+
+//7.4.2
+
+import java.util.ArrayList;public class U7_L4_Activity_Two{public static int searchLast(ArrayList<String> objects,String target){return objects.lastIndexOf(target);}}
+
+//7.5.1
+
+import java.util.Arrays;public class U7_L5_Activity_One{public static void sortAndPrint(String[] arr){String tmp;for(int i=0;i<arr.length;i++){for(int j=0;j<arr.length-1;j++){if(arr[j].compareTo(arr[j+1])>0){tmp=arr[j];arr[j]=arr[j+1];arr[j+1]=tmp;}}}for(String word:arr){System.out.print(word+" ");}}}
+
+//7.5.2
+
+import java.util.ArrayList;import java.util.Collections;public class U7_L5_Activity_Two{public static void selectSort(ArrayList<Integer> list){for(int i=0;i<list.size();i++){for(int j=0;j<list.size()-1;j++){if(list.get(j)>list.get(j+1)){Collections.swap(list,j,j+1);}}}}}
+
+//7.6.1
+
+public class U7_L6_Activity_One{public static void sortAndPrint(String[] arr){for(int i=1;i<arr.length;i++){int x=i;for(int j=i-1;j>=0;j--){if(arr[j].compareTo(arr[x])>0){String tmp=arr[j];arr[j]=arr[x];arr[x]=tmp;x--;}}for(String word:arr){System.out.print(word+" ");}System.out.println();}}}
+
+//7.6.2
+
+import java.util.ArrayList;import java.util.Collections;public class U7_L6_Activity_Two{public static int insertSort(ArrayList<Integer> list){int count=0,x=0;for(int i=1;i<list.size();i++){x=i;for(int j=i-1;j>=0;j--){if(list.get(x)<list.get(j)){Collections.swap(list,j,x);count++;x--;}else{count++;break;}}}return count;}}
