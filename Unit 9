@@ -1,0 +1,13 @@
+// 9.1
+
+public class SpecialityCoffee extends Coffee{private String flavor;private Coffee c;public SpecialityCoffee(){c=new Coffee();flavor="vanilla";}public SpecialityCoffee(String sz,String tp,String fl){flavor=fl;c=new Coffee(sz,false,1,tp);}public SpecialityCoffee(String sz,boolean sk,int sh,String tp,String fl){flavor=fl;c=new Coffee(sz,sk,sh,tp);}public String toString(){return c+" with "+flavor;}}
+
+// 9.2.1
+
+public class SpecialityCoffee extends Coffee{private String flavor;public SpecialityCoffee(){super();flavor="vanilla";}public SpecialityCoffee(String size,String type,String flavor){this(size,false,1,type,flavor);}public SpecialityCoffee(String size,boolean isSkinny,int shots,String type,String flavor){super(size,isSkinny,shots,type);this.flavor=flavor;}public String toString(){return super.toString()+" with "+flavor;}public int getPrice(){if(super.getSize().equals("large")||super.getSize().equals("extra large")){return super.getPrice()+70;}else{return super.getPrice()+50;}}}
+
+// 9.2.2
+
+public class DoubleCone extends Cone{private String second;public DoubleCone(String f,boolean w){super(f,w);second=f;}public DoubleCone(String f1,String f2,boolean w){super(f1,w);second=f2;}public void setFlavor(String f){super.setFlavor(f);second=f;}public void setFlavor(String f1,String f2){super.setFlavor(f1);second=f2;}public String toString(){return "double "+super.toString()+" and "+second;}}
+
+// 
