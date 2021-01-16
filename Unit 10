@@ -1,0 +1,10 @@
+//10.1
+
+public class U10_L1_Activity_One{public static void printSameEnd(int n){if(n>0){printSameEnd(n-10);System.out.print(n + " ");}}}
+
+//10.2
+
+public class U10_L2_Activity_One{public static String reverseString(String str){if(str.isEmpty()){return str;}return reverseString(str.substring(1))+str.charAt(0);}}
+
+//Anagrams
+import java.util.*;public class AnagramList{private final ArrayList<String> anagrams;public AnagramList(String word){anagrams=new ArrayList<String>();ArrayList<Character> list=new ArrayList<Character>();for(int i=0;i<word.length();i++){list.add(word.charAt(i));}int fac=1;for(int i=word.length();i>0;i--){fac*=i;}String str="";for(int i=0;i<fac;i++){int count=0;do{Collections.shuffle(list);count++;str="";for(Character x:list){str+=x+"";}if(count==fac*2){break;}}while(anagrams.contains(str));if(count==fac*2){break;}anagrams.add(str);}sortAnagrams();}private void completeAnagrams(String start,String end){}private void sortAnagrams(){int x=0;for(int i=0;i<anagrams.size();i++){x=i;for(int j=i-1;j>=0;j--){if(anagrams.get(x).compareTo(anagrams.get(j))<0){String str=anagrams.get(x);anagrams.set(x,anagrams.get(j));anagrams.set(j,str);x--;}else{break;}}}}public int searchAnagrams(String target){for(int i=0;i<anagrams.size();i++){if(anagrams.get(i).equals(target)){return i;}}return -1;}public ArrayList<String> getAnagrams(){return anagrams;}}
