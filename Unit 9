@@ -1,13 +1,26 @@
-// 9.1
+//9.1
 
 public class SpecialityCoffee extends Coffee{private String flavor;private Coffee c;public SpecialityCoffee(){c=new Coffee();flavor="vanilla";}public SpecialityCoffee(String sz,String tp,String fl){flavor=fl;c=new Coffee(sz,false,1,tp);}public SpecialityCoffee(String sz,boolean sk,int sh,String tp,String fl){flavor=fl;c=new Coffee(sz,sk,sh,tp);}public String toString(){return c+" with "+flavor;}}
 
-// 9.2.1
+//9.2.1
 
 public class SpecialityCoffee extends Coffee{private String flavor;public SpecialityCoffee(){super();flavor="vanilla";}public SpecialityCoffee(String size,String type,String flavor){this(size,false,1,type,flavor);}public SpecialityCoffee(String size,boolean isSkinny,int shots,String type,String flavor){super(size,isSkinny,shots,type);this.flavor=flavor;}public String toString(){return super.toString()+" with "+flavor;}public int getPrice(){if(super.getSize().equals("large")||super.getSize().equals("extra large")){return super.getPrice()+70;}else{return super.getPrice()+50;}}}
 
-// 9.2.2
+//9.2.2
 
 public class DoubleCone extends Cone{private String second;public DoubleCone(String f,boolean w){super(f,w);second=f;}public DoubleCone(String f1,String f2,boolean w){super(f1,w);second=f2;}public void setFlavor(String f){super.setFlavor(f);second=f;}public void setFlavor(String f1,String f2){super.setFlavor(f1);second=f2;}public String toString(){return "double "+super.toString()+" and "+second;}}
 
-// 
+//9.3 
+
+/*ANIMAL CLASS*/public class Animal{private String name;public Animal(String n){name=n;}public String getName(){return name;}public String speak(){return "";}public String toString(){return getName()+" ("+speak()+" "+speak()+").";}}
+/*FARMER CLASS*/public class Farmer{private String forename;private String surname;public Farmer(String f,String s){forename=f;surname=s;}public String toString(){return forename+" "+surname;}}
+/*COW CLASS*/public class Cow extends Animal{public Cow(){super("cow");}public String toString(){return "cow (moo moo).";}}
+/*PIG CLASS*/public class Pig extends Animal{public Pig(){super("pig");}public String toString(){return "pig (oink oink).";}}
+/*SHEEP CLASS*/public class Sheep extends Animal{public Sheep(){super("sheep");}public String toString(){return "sheep (baa baa).";}}
+
+//Ultimate Frisbee
+/*PERSON CLASS*/public class Person{private String firstName,lastName;public Person(String first,String last){firstName=first;lastName=last;}public int throwDisc(int pow){if(pow<1){pow=1;}if(pow>10){pow=10;}return pow*2;}public String toString(){return lastName+", "+firstName;}}
+/*COACH CLASS*/public class Coach extends Person{private String role;public Coach(String first,String last,String rol){super(first,last);role=rol;}public String toString(){return super.toString()+"\n   Role: "+role;}}
+/*ULTIMATEPLAYER CLASS*/public class UltimatePlayer extends Person{private int jerseyNumber=-1;private static int id=0;private String position="";public UltimatePlayer(String f,String l,String p){super(f,l);if(p.contains("cutter")){position="cutter";}else{position="handler";}id++;jerseyNumber=id;}public String getPosition(){return position;}public int throwDisc(int pow){if(pow<1){pow=1;}if(pow>10){pow=10;}return pow*4;}public String toString(){return super.toString()+"\n   Jersey #: "+jerseyNumber+"\n   Position: "+position;}}
+/*CAPTAIN CLASS*/public class Captain extends UltimatePlayer{private boolean type;public Captain(String f,String l,String p,boolean t){super(f,l,p);type=t;}public int throwDisc(int pow){if(pow<1){pow=1;}if(pow>10){pow=10;}return pow*5;}public boolean getType(){return type;}public String toString(){String off="";if(getType()){off="offense";}else{off="defense";}return super.toString()+"\n   Captain: "+off;}}
+/*ULTIMATE TEAM CLASS*/import java.util.*;public class UltimateTeam{private ArrayList<UltimatePlayer> players=new ArrayList<UltimatePlayer>();private ArrayList<Coach> coaches=new ArrayList<Coach>();public UltimateTeam(ArrayList<UltimatePlayer> p,ArrayList<Coach> c){for(UltimatePlayer up:p){players.add(up);}for(Coach co:c){coaches.add(co);}}public String getCutters(){String list="";for(UltimatePlayer p:players){if(p.getPosition().contains("cutter")){list+=p.toString()+"\n";}}return list;}public String getHandlers(){String list="";for(UltimatePlayer p:players){if(p.getPosition().contains("handler")){list+=p.toString()+"\n";}}return list;}public String toString(){String list="COACHES\n";for(Coach c:coaches){list+=c.toString()+"\n";}list+="\nPLAYERS\n";for(UltimatePlayer p:players){list+=p.toString()+"\n";}return list;}}
