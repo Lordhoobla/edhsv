@@ -90,3 +90,12 @@ public boolean reposition(int frRow,int frCol,int toRow,int toCol){try{if(stock[
 
 //Guessing game
 public class GuessingGame{private int guess;private static int numOf=0;private boolean complete;public GuessingGame(int num){guess=((num>0)?1:0)*((int)(Math.random()*num)+1);}public int numGuesses(){return numOf;}public String guessAnswer(int cGuess){return (complete)?"Game Already Over":((cGuess>guess)?"Too high":((cGuess<guess)?"Too low":"Correct"));}}
+
+//Reverser
+public class Reverser{public static String reverseWord(String word){return new java.lang.StringBuilder(word).reverse().toString();}public static String reverseAllWords(String sentence){java.util.List<String> sent=java.util.Arrays.asList(sentence.split(" "));for(int i=0;i<sent.size();i++){sent.set(i,reverseWord(sent.get(i)));}return sent.toString().replaceAll(", "," ").replace("[","").replace("]","");}}
+
+//AddressBook
+import java.util.ArrayList;public class AddressBook{private ArrayList<Address> addresses;public AddressBook(){addresses=new ArrayList<Address>();}public java.util.List<Address> onStreet(String st){ArrayList<Address> onStreet=new ArrayList<Address>();addresses.forEach(n->{if(n.getStreet().equals(st)){onStreet.add(n);}});return onStreet;}public int newBusiness(String nm,String st,int no){for(int i=0;i<addresses.size();i++){if(addresses.get(i).getName().equals(nm)&&addresses.get(i).getStreet().equals(st)&&addresses.get(i).getNumber()==no){return i;}}addresses.add(new Address(nm,st,no));return addresses.size()-1;}}
+
+//StationDistances
+public class StationDistances{private double[][] dists;public StationDistances(double[] distances){dists=new double[distances.length][distances.length];for(int i=0;i<distances.length;i++){dists[i][0]=dists[0][i]=distances[i];for(int j=1;j<=i;j++){dists[i][j]=dists[j][i]=(int)((distances[i]-distances[j])*100)/100.0;}}}public void changeDist(int index,double val){dists[0][index]=dists[index][0]=val;for(int i=1;i<index;i++){dists[i][index]=dists[index][i]=dists[index][0]-dists[index-1][0];}}}
