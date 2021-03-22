@@ -87,3 +87,6 @@ public boolean fulfillOrder(String code,int orderQuant){for(Product[] stockrow:s
 
 //GO INTO THE "Product.java" FILE AND TAKE OUT THE "final" in "private final String productCode;" then add the method "public void setProductCode(String x){productCode=x;}" INSIDE THE PRODUCT CLASS
 public boolean reposition(int frRow,int frCol,int toRow,int toCol){try{if(stock[toRow][toCol].getQuant()==0){String code=stock[toRow][toCol].getProductCode();stock[toRow][toCol].setQuant(stock[frRow][frCol].getQuant());stock[toRow][toCol].setProductCode(stock[frRow][frCol].getProductCode());stock[frRow][frCol].setProductCode(code);stock[frRow][frCol].setQuant(0);return true;}return false;}catch(Exception e){return false;}}
+
+//Guessing game
+public class GuessingGame{private int guess;private static int numOf=0;private boolean complete;public GuessingGame(int num){guess=((num>0)?1:0)*((int)(Math.random()*num)+1);}public int numGuesses(){return numOf;}public String guessAnswer(int cGuess){return (complete)?"Game Already Over":((cGuess>guess)?"Too high":((cGuess<guess)?"Too low":"Correct"));}}
